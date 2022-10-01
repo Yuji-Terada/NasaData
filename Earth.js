@@ -8,7 +8,7 @@ const renderEarth = (e) => {
         .globeImageUrl(`./${N}.jpg`)
         .pointAltitude('size')
         .pointColor('color')
-    (document.getElementById('globeViz');
+    (document.getElementById('globeViz'));
 }
 
 form.addEventListener('change', renderEarth)
