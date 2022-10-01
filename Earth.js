@@ -1,4 +1,5 @@
-var N = document.form.image.value;
+var form = document.forms.images;
+var N = form.image.value;
     
     Globe()
       .globeImageUrl(`./${N}.jpg`)
