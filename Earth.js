@@ -8,6 +8,7 @@ const renderEarth = (e) => {
         .globeImageUrl(`./${N}.jpg`)
         .pointAltitude('size')
         .pointColor('color')
+    Container()
         .backgroundColor([#00000000])
     (document.getElementById('globeViz'));
 }
