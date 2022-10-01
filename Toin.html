@@ -8,9 +8,11 @@
 <body>
   <div id="globeViz"></div>
 
-  <script>    
+  <script>
+    const N = 0;
+    
     Globe()
-      .globeImageUrl('./0.jpg')
+      .globeImageUrl('./${N}.jpg')
       .pointAltitude('size')
       .pointColor('color')
     (document.getElementById('globeViz'))
