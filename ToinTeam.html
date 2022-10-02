@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang = "ja">
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        
+
+        <script src = "//unpkg.com/globe.gl"></script>
+        <script src = "./_globe.gl.min.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "ToinTeam.css">
+    </head>
+
+    <body>
+        <!--2つの地球-->
+        <div class = "container">
+            <div id = "globeViz"></div>
+            <div id = "globeViz2"></div>
+            <!--2Dの地図データ表示-->
+            <div id = "map">
+                <img id = "twodmap" src = "0.jpg">
+            </div>
+        </div>
+
+        <!--上部ナビタブ-->
+        <div class = "uppernav">
+            <ul class = "tabnav">
+                <li class = "uppernavcomponent"><a href = #>My History</a></li>
+                <li class = "uppernavcomponent"><a href="#">Save Layers</a></li>
+                <li class = "uppernavcomponent"><a href="#">Export into IMG</a></li>
+                <li class = "uppernavcomponent"><a href="#">Go to Journey</a></li>
+                <li class = "uppernavcomponent"><a href="#">Make Journey</a></li>
+                <li class = "uppernavcomponent"><a href="#">Language</a></li>
+            </ul>
+        </div>
+
+        <!--ナビゲーションボタン-->
+        <div class = "openbtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id = "g-nav">
+            <p id = "layers">←  Left Earth　　　　<strong id = "layersstrong">LAYERS</strong>　　　　Right Earth  →</p>
+            <div id = "g-nav-list">
+                <!--データ選択-->
+                <form name = "images" id = "form">
+                    <input type = "radio" name = image value = "0">Aerosol Optical Thickness<br>
+                    <input type = "radio" name = image value = "1">Aerosol Particle Radius<br>
+                    <input type = "radio" name = image value = "2">Carbon Monoxide<br>
+                    <input type = "radio" name = image value = "3">Cloud Fraction<br>
+                    <input type = "radio" name = image value = "4">Cloud Optical Thickness<br>
+                    <input type = "radio" name = image value = "5">Cloud Particle Radius<br>
+                    <input type = "radio" name = image value = "6">Cloud Water Content<br>
+                    <input type = "radio" name = image value = "7">False Color (MODIS)<br>
+                    <input type = "radio" name = image value = "8">Nitrogen Dioxide<br>
+                    <input type = "radio" name = image value = "9">Ozone<br>
+                    <input type = "radio" name = image value = "10">Rainfall<br>
+                    <input type = "radio" name = image value = "11">True Color (MODIS)<br>
+                    <input type = "radio" name = image value = "12">True Color (VIIRS)<br>
+                    <input type = "radio" name = image value = "13">Water Vapor<br>
+                    <input type = "radio" name = image value = "14">Albedo<br>
+                    <input type = "radio" name = image value = "15">Average Land Surface Temperature [Day]<br>
+                    <input type = "radio" name = image value = "16">Average Land Surface Temperature [Night]<br>
+                    <input type = "radio" name = image value = "17">Average Land Surface Temperature (AVHRR,1985-97)<br>
+                    <input type = "radio" name = image value = "18">Global Temperature Anomaly<br>
+                    <input type = "radio" name = image value = "19">Land Surface Temperature Anomaly [Day]<br>
+                    <input type = "radio" name = image value = "20">Land Surface Temperature Anomaly [Night]<br>
+                    <input type = "radio" name = image value = "21">Land Surface Temperature [Day]<br>
+                    <input type = "radio" name = image value = "22">Land Surface Temperature [Night]<br>
+                    <input type = "radio" name = image value = "23">Net Radiation<br>
+                    <input type = "radio" name = image value = "24">Outgoing longwave Randiation<br>
+                    <input type = "radio" name = image value = "25">Reflected Shortwave Randiation<br>
+                    <input type = "radio" name = image value = "26">Sea Surface Temperature (AVHRR,1981-2006)<br>
+                    <input type = "radio" name = image value = "27">Sea Surface Temperature (MWOL,1998+)<br>
+                    <input type = "radio" name = image value = "28">Sea Surface Temperature (MODIS,2002+)<br>
+                    <input type = "radio" name = image value = "29">Sea Surface Temperature Anomaly (AMSR-E,2002-11)<br>
+                    <input type = "radio" name = image value = "30">Solar Insolation<br>
+                    <input type = "radio" name = image value = "31">UV Index<br>
+                    <input type = "radio" name = image value = "32">Active Fires<br>
+                    <input type = "radio" name = image value = "33">Blue Marble:Next Generation<br>
+                    <input type = "radio" name = image value = "34">Greenland/Antarctica Elevation<br>
+                    <input type = "radio" name = image value = "35">Land Cover Classification<br>
+                    <input type = "radio" name = image value = "36">Leaf Area Index<br>
+                    <input type = "radio" name = image value = "37">Net Primary Productivity<br>
+                    <input type = "radio" name = image value = "38">Permafrost<br>
+                    <input type = "radio" name = image value = "39">Sea Ice and Snow Extent,Northern Hemisphere<br>
+                    <input type = "radio" name = image value = "40">Sea Ice Concentration and Snow Extent,Global<br>
+                    <input type = "radio" name = image value = "41">Snow Cover<br>
+                    <input type = "radio" name = image value = "42">Snow Water Equivalent<br>
+                    <input type = "radio" name = image value = "43">Topography<br>
+                    <input type = "radio" name = image value = "44">Vegetation Index (NDVI)<br>
+                    <input type = "radio" name = image value = "45">Water Equivalent Anomaly (2002-17)<br>
+                    <input type = "radio" name = image value = "46">Chlorophyll Concentration<br>
+                    <input type = "radio" name = image value = "47">Population<br>
+                    <input type = "radio" name = image value = "48">Average Sea Surface Temperature (AVHRR,1985-97)<br>
+                    <input type = "radio" name = image value = "49">Bathymetry<br>
+                    <input type = "radio" name = image value = "50">Sea Surface Salinity (2011-15)<br>
+                </form>
+                <!--データ選択2-->
+                <form name = "images2" id = "form2">
+                    <input type = "radio" name = image value = "0">Aerosol Optical Thickness<br>
+                    <input type = "radio" name = image value = "1">Aerosol Particle Radius<br>
+                    <input type = "radio" name = image value = "2">Carbon Monoxide<br>
+                    <input type = "radio" name = image value = "3">Cloud Fraction<br>
+                    <input type = "radio" name = image value = "4">Cloud Optical Thickness<br>
+                    <input type = "radio" name = image value = "5">Cloud Particle Radius<br>
+                    <input type = "radio" name = image value = "6">Cloud Water Content<br>
+                    <input type = "radio" name = image value = "7">False Color (MODIS)<br>
+                    <input type = "radio" name = image value = "8">Nitrogen Dioxide<br>
+                    <input type = "radio" name = image value = "9">Ozone<br>
+                    <input type = "radio" name = image value = "10">Rainfall<br>
+                    <input type = "radio" name = image value = "11">True Color (MODIS)<br>
+                    <input type = "radio" name = image value = "12">True Color (VIIRS)<br>
+                    <input type = "radio" name = image value = "13">Water Vapor<br>
+                    <input type = "radio" name = image value = "14">Albedo<br>
+                    <input type = "radio" name = image value = "15">Average Land Surface Temperature [Day]<br>
+                    <input type = "radio" name = image value = "16">Average Land Surface Temperature [Night]<br>
+                    <input type = "radio" name = image value = "17">Average Land Surface Temperature (AVHRR,1985-97)<br>
+                    <input type = "radio" name = image value = "18">Global Temperature Anomaly<br>
+                    <input type = "radio" name = image value = "19">Land Surface Temperature Anomaly [Day]<br>
+                    <input type = "radio" name = image value = "20">Land Surface Temperature Anomaly [Night]<br>
+                    <input type = "radio" name = image value = "21">Land Surface Temperature [Day]<br>
+                    <input type = "radio" name = image value = "22">Land Surface Temperature [Night]<br>
+                    <input type = "radio" name = image value = "23">Net Radiation<br>
+                    <input type = "radio" name = image value = "24">Outgoing longwave Randiation<br>
+                    <input type = "radio" name = image value = "25">Reflected Shortwave Randiation<br>
+                    <input type = "radio" name = image value = "26">Sea Surface Temperature (AVHRR,1981-2006)<br>
+                    <input type = "radio" name = image value = "27">Sea Surface Temperature (MWOL,1998+)<br>
+                    <input type = "radio" name = image value = "28">Sea Surface Temperature (MODIS,2002+)<br>
+                    <input type = "radio" name = image value = "29">Sea Surface Temperature Anomaly (AMSR-E,2002-11)<br>
+                    <input type = "radio" name = image value = "30">Solar Insolation<br>
+                    <input type = "radio" name = image value = "31">UV Index<br>
+                    <input type = "radio" name = image value = "32">Active Fires<br>
+                    <input type = "radio" name = image value = "33">Blue Marble:Next Generation<br>
+                    <input type = "radio" name = image value = "34">Greenland/Antarctica Elevation<br>
+                    <input type = "radio" name = image value = "35">Land Cover Classification<br>
+                    <input type = "radio" name = image value = "36">Leaf Area Index<br>
+                    <input type = "radio" name = image value = "37">Net Primary Productivity<br>
+                    <input type = "radio" name = image value = "38">Permafrost<br>
+                    <input type = "radio" name = image value = "39">Sea Ice and Snow Extent,Northern Hemisphere<br>
+                    <input type = "radio" name = image value = "40">Sea Ice Concentration and Snow Extent,Global<br>
+                    <input type = "radio" name = image value = "41">Snow Cover<br>
+                    <input type = "radio" name = image value = "42">Snow Water Equivalent<br>
+                    <input type = "radio" name = image value = "43">Topography<br>
+                    <input type = "radio" name = image value = "44">Vegetation Index (NDVI)<br>
+                    <input type = "radio" name = image value = "45">Water Equivalent Anomaly (2002-17)<br>
+                    <input type = "radio" name = image value = "46">Chlorophyll Concentration<br>
+                    <input type = "radio" name = image value = "47">Population<br>
+                    <input type = "radio" name = image value = "48">Average Sea Surface Temperature (AVHRR,1985-97)<br>
+                    <input type = "radio" name = image value = "49">Bathymetry<br>
+                    <input type = "radio" name = image value = "50">Sea Surface Salinity (2011-15)<br>
+                </form>
+            </div>
+        </nav>
+
+        <!--2D/3Dの変更ボタン-->
+        <div class="container-dimention">
+            <form name = "dimention" id = "dimention">
+                <label><input type="radio" name="image" value="2d"><span class="outside"><span class="inside"></span></span>2D</label>
+                <label><input type="radio" name="image" value="3d" checked><span class="outside"><span class="inside"></span></span>3D</label>
+            </form>
+        </div>
+        <!--<div class = "dimention2-3">
+            <div class = "container2">
+                <p id = "dimention2">2D</p>
+                <p id = "dimention3">3D</p>
+            </div>
+        </div>-->
+
+        <!--2つの地球のスクリプト-->
+        <script src = "ToinTeamEarths.js">
+            
+        </script>
+
+        <!--jQueryを使用した滑らかな動きのためのスクリプト-->
+        <script>
+            document.getElementById("download").onclick = (event) => {
+            var canvas = document.querySelector("#globeViz canvas")
+
+            let link = document.createElement("a");
+            link.href = canvas.toDataURL("image/png");
+            link.download = "test.png";
+            link.click()};
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src = "ToinTeamMoving.js"></script>
+    </body>
+</html>
