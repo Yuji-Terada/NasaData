@@ -180,7 +180,7 @@ a{
     padding-top: 11vh;
     color: #ffffff;
     font-family: "Bahnschrift";
-    font-size: 40px;
+    font-size: 4vw;
     font-weight: bold;
     text-align: center;
 }
@@ -330,7 +330,7 @@ a{
 #layers{
     margin-top: 12.5vh;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 4vw;
     text-align: center;
 }
 
