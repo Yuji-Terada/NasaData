@@ -1,8 +1,8 @@
 var form = document.forms.images;
 var form2 = document.forms.images2;
 
-let M = 0
-let N = 0
+var M = 0
+var N = 0
 
 const mapWidth = document.body.clientWidth/2;
 
@@ -46,8 +46,34 @@ const renderEarth2 = (e) => {
     })*/
 }
 
+/*-------------------------------*/
 form.addEventListener('change', renderEarth)
 form2.addEventListener('change', renderEarth2)
 
-renderEarth({target: {value: 0}})
-renderEarth2({target: {value: 0}})
+renderEarth({target: {value: 33}})
+renderEarth2({target: {value: 33}})
+
+var input2d = document.getElementById("2d");
+var input3d = document.getElementById("3d")
+
+var map2d = document.getElementById("twodmap")
+
+var M = 33;
+
+function switchmap (event){
+    var value = event.target.value;
+    if(value == "2d"){
+        map2d.src = `./${M}.jpg`
+        map2d.style.display = "block"
+        map.style.display = "none"
+        map2.style.display = "none"
+    }
+    else{
+        map2d.style.display = "none"
+        map.style.display = "block"
+        map2.style.display = "block"
+    }
+}
+
+input2d.addEventListener('change', switchmap)
+input3d.addEventListener('change', switchmap)
