@@ -71,7 +71,7 @@ a{
     display: flex;
 
     color: #ffffff;
-    font-size: 25px;
+    font-size: 1.5vw;
 
     margin-top: 3.5vh;
     margin-left: 3vw;
@@ -180,7 +180,7 @@ a{
     padding-top: 11vh;
     color: #ffffff;
     font-family: "Bahnschrift";
-    font-size: 4vw;
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
 }
@@ -299,26 +299,26 @@ a{
     position: absolute;
     z-index: 999;
 
-    margin-top: 100px;
+    margin-top: 1.25vw;
 
     left: 5vw;
     width: 12.5vw;
 
     color: #ffffff;
     line-height: 2.1;
-    font-size: 19px;
+    font-size: 1vw;
 }
 
 #form2 {
     position: absolute;
     z-index: 999;
 
-    margin-top: 100px;
+    margin-top: 1.25vw;
     right: 5vw;
     width: 12.5vw;
     color: #ffffff;
     line-height: 2.1;
-    font-size: 19px;
+    font-size: 1vw;
 
     transition: all 0.4s;
 }
@@ -330,12 +330,12 @@ a{
 #layers{
     margin-top: 12.5vh;
     color: #ffffff;
-    font-size: 4vw;
+    font-size: 1.75vw;
     text-align: center;
 }
 
 #layersstrong{
-    font-size: 50px;
+    font-size: 3.5vw;
 }
 
 /*---------------------------------------------*/
@@ -371,5 +371,19 @@ a{
 }
 
 #dimention{
-    color: #ffffff;
+    color: #bbbbbb;
+    font-size: 3.5vh;
+
+    display: flex;
+    flex-flow: row;
+
+    margin-bottom: 2vh
+}
+
+.dimention-type{
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+
+    margin-right: 1.5vw;
+    margin-left: 1.5vw;
 }
