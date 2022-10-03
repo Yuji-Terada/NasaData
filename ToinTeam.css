@@ -7,10 +7,12 @@ html, body{
     height: 100vh;
     width: 100vw;
 
-    background-color: #000000;
+    /*
+    background-color: #ffffff;
+    */
     background-image: url(starrysky.jpg);
 
-    font-family: "Bahnschrift";
+    font-family: "Bahnschrift", "Yu Gothic";
     font-weight: bold;
 }
 
@@ -263,15 +265,6 @@ a{
     -webkit-overflow-scrolling: touch;
 }
 
-#g-nav ul{
-    position: absolute;
-    z-index: 999;
-    top: 50%;
-    left: 25%;
-
-    transform: translate(-50%,-50%);
-}
-
 #g-nav{
     position: fixed;
     z-index: 999;
@@ -300,9 +293,10 @@ a{
     z-index: 999;
 
     margin-top: 1.25vw;
+    margin-bottom: 0.5vh;
 
     left: 5vw;
-    width: 12.5vw;
+    width: 15vw;
 
     color: #ffffff;
     line-height: 2.1;
@@ -312,15 +306,16 @@ a{
 #form2 {
     position: absolute;
     z-index: 999;
-
+    
     margin-top: 1.25vw;
+    margin-bottom: 0.5vh;
+
     right: 5vw;
-    width: 12.5vw;
+    width: 15vw;
+
     color: #ffffff;
     line-height: 2.1;
     font-size: 1vw;
-
-    transition: all 0.4s;
 }
 
 #form select, #form2 select{
