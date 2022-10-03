@@ -22,7 +22,7 @@ const renderEarth = (e) => {
 const renderEarth2 = (e) => {
     N = e.target.value;
 
-    const myGlobe2 = Globe-two()
+    const myGlobe2 = GlobeTwo()
         .backgroundColor("#00000000")
         .globeImageUrl(`./${N}.jpg`)
         .bumpImageUrl("topology.png")
